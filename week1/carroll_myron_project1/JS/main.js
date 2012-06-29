@@ -13,8 +13,8 @@ window.addEventListener("DOMContentLoaded", function () {
        
     };
      //variable Defaults
-    var studentLevel = ['--Choose One--', 'Beginner', 'Intermediate', 'Advanced', 'Seasoned Professional'],
-        skillValue,
+    var studentLevel = ['--Choose One--', 'Beginner', 'Intermediate', 'Advanced', 'Seasoned_Professional'],
+        readValue = "No",
         errMsg = $('errors'),
         save = $('submit');
     //Create Select Field Elements
@@ -23,7 +23,7 @@ window.addEventListener("DOMContentLoaded", function () {
         var formTag = document.getElementsByTagName('form'),
             selectLi = $('levels'),
             makeSelect = document.createElement('select');
-            makeSelect.setAttribute('id', 'levels');
+            makeSelect.setAttribute('id', 'level');
         for(var i=0, j=studentLevel.length; i<j; i++){
             var makeOption = document.createElement('option');
             var optText = studentLevel[i];
@@ -38,16 +38,12 @@ window.addEventListener("DOMContentLoaded", function () {
     
     //Find value of Checked Boxes
     function getCheckedBoxValues(){
-        var holdValues = [];
-        var box = document.forms[0].skill;
-        for(var i=0; i<box.length; i++){
-            if(box[i].checked){
-                skillValue = box[i].value;
-                holdValues.push(skillValue);
-            }
+        if ($("reading").checked){
+            readValue = $("reading").value
+        }else{
+            readValue = "No"
         }
-        //return holdValues;
-    }
+    };
 
     
     //Toggle Controls
@@ -74,9 +70,9 @@ window.addEventListener("DOMContentLoaded", function () {
      function storeData(key){
         //If there is no key, this means this is a brand new item and we need a new key.
         if(!key){
-        var id = Math.floor(Math.random()*100000001);
+            var id = Math.floor(Math.random()*100000001);
         }else{
-            //Set the is to the existing key that we are editing so it will save over the data
+            //Set the id to the existing key that we are editing so it will save over the data
             //Same key that was passed from editSubmit event handler
             //to the validate function and then passed here, into the storeData function.
             id = key;
@@ -89,8 +85,8 @@ window.addEventListener("DOMContentLoaded", function () {
             item.lname      = ["Last Name:", $('lname').value];
             item.email      = ["Email:", $('email').value];
             item.birth      = ["Birthday:", $('birth').value];
-            item.level      = ["Level:", $('levels').value]; 
-            item.skills     = ["Skills to Develop:", skillValue];
+            item.level      = ["Level:", $('level').value]; 
+            item.reading     = ["Sight Read:", readValue];
             item.other      = ["Other:", $('other').value];
             item.time       = ["Time:", $('time').value];
         //Save the data into Local Storage. Use Stringify to convert object to string
@@ -120,7 +116,7 @@ window.addEventListener("DOMContentLoaded", function () {
             var obj = JSON.parse(value); //Convert string from localStorage back into an object with JSON.parse.
             var makeSubList = document.createElement('ul');
             makeLi.appendChild(makeSubList);
-            //getImage(obj.group[1], makeSubList);
+            getImage(obj.level[1], makeSubList);
             for (var n in obj){
                 var makeSubLi = document.createElement('li');
                 makeSubList.appendChild(makeSubLi);
@@ -193,8 +189,10 @@ window.addEventListener("DOMContentLoaded", function () {
             $('lname').value = item.lname[1];
             $('email').value = item.email[1];
             $('birth').value = item.birth[1];
-            $('levels').value = item.level[1];
-            //$('skills').value = item.group[1];
+            $('level').value = item.level[1];
+            if(item.reading[1] == "Yes"){
+                $('reading').setAttribute("checked", "checked");
+            };
             $('other').value = item.other[1];
             $('time').value = item.time[1];
             
@@ -203,7 +201,7 @@ window.addEventListener("DOMContentLoaded", function () {
             
             //change submit button to edit button
             $('submit').value = 'Edit Contact';
-            var editSubmit = $('levels');
+            var editSubmit = $('submit');
             //Save key value in this functionas a property of the editSubmit event so we can use the value when we dave the data we edited.
             editSubmit.addEventListener('click', validate);
             editSubmit.key = this.key;
@@ -234,7 +232,6 @@ window.addEventListener("DOMContentLoaded", function () {
             var getFname = $('fname');
             var getLname = $('lname');
             var getEmail = $('email');
-            var getLevel = $('levels');
             
             //reset error messages
             errMsg.innerHTML = "";
