@@ -1,7 +1,6 @@
 // Author: Myron Carroll
-// Title: Assignment 4 JavaScript
-// Class: Visual Frameworks
-
+// Title: Assignment 1 JavaScript
+// Class: Mobile Interfaces and Usability
 // Wait until the DOM is Ready
 window.addEventListener("DOMContentLoaded", function () {
       
