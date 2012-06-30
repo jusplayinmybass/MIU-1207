@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", function () {
       
 
     //getElementByID Function
-    function $(x) {
+    function ge(x) {
         var theElement = document.getElementById(x);
         return theElement;
        
@@ -15,13 +15,13 @@ window.addEventListener("DOMContentLoaded", function () {
      //variable Defaults
     var studentLevel = ['--Choose One--', 'Beginner', 'Intermediate', 'Advanced', 'Seasoned_Professional'],
         readValue = "No",
-        errMsg = $('errors'),
-        save = $('submit');
+        errMsg = ge('errors'),
+        save = ge('submit');
     //Create Select Field Elements
 
     function makeLevel () {
         var formTag = document.getElementsByTagName('form'),
-            selectLi = $('levels'),
+            selectLi = ge('levels'),
             makeSelect = document.createElement('select');
             makeSelect.setAttribute('id', 'level');
         for(var i=0, j=studentLevel.length; i<j; i++){
@@ -38,8 +38,8 @@ window.addEventListener("DOMContentLoaded", function () {
     
     //Find value of Checked Boxes
     function getCheckedBoxValues(){
-        if ($("reading").checked){
-            readValue = $("reading").value
+        if (ge("reading").checked){
+            readValue = ge("reading").value
         }else{
             readValue = "No"
         }
@@ -50,17 +50,17 @@ window.addEventListener("DOMContentLoaded", function () {
     function toggleControls(n){
         switch(n){
             case "on":
-                $('contactForm').style.display = "none";
-                $('clearLink').style.display = "inline";
-                $('displayLink').style.display = "none";
-                $('addNew').style.display = "inline";
+                ge('contactForm').style.display = "none";
+                ge('clearLink').style.display = "inline";
+                ge('displayLink').style.display = "none";
+                ge('addNew').style.display = "inline";
                 break;
             case "off":
-                $('contactForm').style.display = "block";
-                $('clearLink').style.display = "inline";
-                $('displayLink').style.display = "inline";
-                $('addNew').style.display = "none";
-                $('items').style.display = "none";
+                ge('contactForm').style.display = "block";
+                ge('clearLink').style.display = "inline";
+                ge('displayLink').style.display = "inline";
+                ge('addNew').style.display = "none";
+                ge('items').style.display = "none";
                 break;
             default:
                 return false;
@@ -81,14 +81,14 @@ window.addEventListener("DOMContentLoaded", function () {
         //Object contains an array that contains form label and input value
         getCheckedBoxValues();
            var item            = {};
-            item.fname      = ["First Name:", $('fname').value];
-            item.lname      = ["Last Name:", $('lname').value];
-            item.email      = ["Email:", $('email').value];
-            item.birth      = ["Birthday:", $('birth').value];
-            item.level      = ["Level:", $('level').value]; 
+            item.fname      = ["First Name:", ge('fname').value];
+            item.lname      = ["Last Name:", ge('lname').value];
+            item.email      = ["Email:", ge('email').value];
+            item.birth      = ["Birthday:", ge('birth').value];
+            item.level      = ["Level:", ge('level').value]; 
             item.reading     = ["Sight Read:", readValue];
-            item.other      = ["Other:", $('other').value];
-            item.time       = ["Time:", $('time').value];
+            item.other      = ["Other:", ge('other').value];
+            item.time       = ["Time:", ge('time').value];
         //Save the data into Local Storage. Use Stringify to convert object to string
         localStorage.setItem(id, JSON.stringify(item)); 
         alert("Contact Saved!");
@@ -106,7 +106,7 @@ window.addEventListener("DOMContentLoaded", function () {
           var makeList = document.createElement('ul');
           makeDiv.appendChild(makeList);
           document.body.appendChild(makeDiv);
-          $('items').style.display = "display"; 
+          ge('items').style.display = "display"; 
           for(var i=0, j=localStorage.length; i<j; i++){
             var makeLi = document.createElement('li');
             var linksLi = document.createElement('li');
@@ -185,23 +185,23 @@ window.addEventListener("DOMContentLoaded", function () {
             toggleControls('off');
             
             //Populate form with stored values
-            $('fname').value = item.fname[1];
-            $('lname').value = item.lname[1];
-            $('email').value = item.email[1];
-            $('birth').value = item.birth[1];
-            $('level').value = item.level[1];
+            ge('fname').value = item.fname[1];
+            ge('lname').value = item.lname[1];
+            ge('email').value = item.email[1];
+            ge('birth').value = item.birth[1];
+            ge('level').value = item.level[1];
             if(item.reading[1] == "Yes"){
-                $('reading').setAttribute("checked", "checked");
+                ge('reading').setAttribute("checked", "checked");
             };
-            $('other').value = item.other[1];
-            $('time').value = item.time[1];
+            ge('other').value = item.other[1];
+            ge('time').value = item.time[1];
             
             //Remove initial Listener
             save.removeEventListener('click', storeData);
             
             //change submit button to edit button
-            $('submit').value = 'Edit Contact';
-            var editSubmit = $('submit');
+            ge('submit').value = 'Edit Contact';
+            var editSubmit = ge('submit');
             //Save key value in this functionas a property of the editSubmit event so we can use the value when we dave the data we edited.
             editSubmit.addEventListener('click', validate);
             editSubmit.key = this.key;
@@ -229,9 +229,9 @@ window.addEventListener("DOMContentLoaded", function () {
         
         function validate(e){
             //Define the elements that we want to check
-            var getFname = $('fname');
-            var getLname = $('lname');
-            var getEmail = $('email');
+            var getFname = ge('fname');
+            var getLname = ge('lname');
+            var getEmail = ge('email');
             
             //reset error messages
             errMsg.innerHTML = "";
@@ -253,7 +253,7 @@ window.addEventListener("DOMContentLoaded", function () {
                 messageAry.push(lNameError);
             }
             //Email Validation
-            var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}ge/;
             if(!(re.exec(getEmail.value))){
                 var emailError = "Please Enter A Valid Email Address";
                 getEmail.style.border = "3px solid red";
@@ -275,12 +275,13 @@ window.addEventListener("DOMContentLoaded", function () {
              }
             
         };
+   
     makeLevel();
 
     //Set Links and Submit Click events
-    var displayLink = $('displayLink');
+    var displayLink = ge('displayLink');
     displayLink.addEventListener('click', getData);
-    var clearLink = $('clearLink');
+    var clearLink = ge('clearLink');
     clearLink.addEventListener('click', clearLocal);
     
     save.addEventListener('click', validate);
