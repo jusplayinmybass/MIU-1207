@@ -14,7 +14,7 @@ var json = {
         "lname": ["Last Name:", "Jackson"],
         "email": ["Email:", "sessionace@gmail.com"],
         "birth": ["Birthday:", "1952-06-23"],
-        "level": ["Level:", "Seasoned Professional"],
+        "level": ["Level:", "Seasoned_Professional"],
         "reading": ["Sight Reading:", "Yes"],
         "other": ["Other Skills to Develop:", "Not being So Opinionated"],
         "time": ["Time:", "15"] 
@@ -24,7 +24,7 @@ var json = {
         "lname": ["Last Name:", "Jamerson"],
         "email": ["Email:", "funkbrother1@gmail.com"],
         "birth": ["Birthday:", "1936-01-19"],
-        "level": ["Level:", "Seasoned Professional"],
+        "level": ["Level:", "Seasoned_Professional"],
         "reading": ["Sight Reading:", "Yes"],
         "other": ["Other Skills to Develop:", "Technique"],
         "time": ["Time:", "10"] 
@@ -61,7 +61,7 @@ var json = {
         "lname": ["Last Name:", "Jackson"],
         "email": ["Email:", "sessionace@gmail.com"],
         "birth": ["Birthday:", "1964-09-11"],
-        "level": ["Level:", "Seasoned Professional"],
+        "level": ["Level:", "Seasoned_Professional"],
         "reading": ["Sight Reading:", "No"],
         "other": ["Other Skills to Develop:", "I just Want To Groove"],
         "time": ["Time:", "15"] 
@@ -70,7 +70,7 @@ var json = {
         "lname": ["Last Name:", "Sumner"],
         "email": ["Email:", "toogoodformyband@gmail.com"],
         "birth": ["Birthday:", "1951-10-02"],
-        "level": ["Level:", "Seasoned Professional"],
+        "level": ["Level:", "Seasoned_Professional"],
         "reading": ["Sight Reading:", "Yes"],
         "other": ["Other Skills to Develop:", "Slapping"],
         "time": ["Time:", "15"] 
@@ -133,7 +133,7 @@ var json = {
         "lname": ["Last Name:", "Freeman"],
         "email": ["Email:", "atlbest@gmail.com"],
         "birth": ["Birthday:", "1981-12-31"],
-        "level": ["Level:", "Seasoned Professional"],
+        "level": ["Level:", "Seasoned_Professional"],
         "reading": ["Sight Reading:", "No"],
         "other": ["Other Skills to Develop:", "Facial Expressions on Stage"],
         "time": ["Time:", "15"] 
@@ -160,7 +160,7 @@ var json = {
         "lname": ["Last Name:", "Edge"],
         "email": ["Email:", "keyzandbass@facebook.com"],
         "birth": ["Birthday:", "1971-10-14"],
-        "level": ["Level:", "Seasoned Professional"],
+        "level": ["Level:", "Seasoned_Professional"],
         "reading": ["Sight Reading:", "Yes"],
         "other": ["Other Skills to Develop:", "I want to learn Hymns"],
         "time": ["Time:", "15"] 
@@ -169,11 +169,11 @@ var json = {
         "lname": ["Last Name:", "Miller"],
         "email": ["Email:", "basscomposer@gmail.com"],
         "birth": ["Birthday:", "1959-06-14"],
-        "level": ["Level:", "Seasoned Professional"],
+        "level": ["Level:", "Seasoned_Professional"],
         "reading": ["Sight Reading:", "Yes"],
         "other": ["Other Skills to Develop:", "How to play more than 4 strings"],
         "time": ["Time:", "15"] 
-    },"contact2": {
+    },"contact20": {
         "fname": ["First Name:", "Marcus"],
         "lname": ["Last Name:", "Carroll"],
         "email": ["Email:", "myson@msn.com"],

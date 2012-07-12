@@ -252,7 +252,7 @@ window.addEventListener("DOMContentLoaded", function () {
                 messageAry.push(lNameError);
             }
             //Email Validation
-            var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}ge/;
+            var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
             if(!(re.exec(getEmail.value))){
                 var emailError = "Please Enter A Valid Email Address";
                 getEmail.style.border = "3px solid red";
