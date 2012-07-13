@@ -1,0 +1,64 @@
+/*
+	Author: Myron Carroll
+	Title: Assignment 4 Stylesheet
+	For: Visual Frameworks
+
+*/
+
+body
+{ 
+background: #0000BB; 
+}
+p{	
+	font-family:  Arial;
+	color: #EEE;
+	background: #3399FF;
+}
+
+a{
+	color: #FF0000;
+	background-color: #0000BB;
+}
+h1{
+	font: 30px Arial;
+	font-weight: bold;
+	border: 10px solid #33BBFF;
+	color: #EEE;
+	background-color: #3399FF;
+	padding: 10px;
+}
+
+form {
+	margin: 10px solid #EEE;
+	background: 3399FF
+}
+
+label {
+	color: #EEE;
+	display: inline;
+	text-align: left;
+	background: 3399FF
+}
+
+div{
+	font-family: Times;
+	color: #EEE;
+	background: #3399FF;
+	display: inline;
+}
+
+
+li {
+	color: #EEE;
+	text-align: left;
+}
+
+legend {
+	font-weight: bold;
+	background: 3399FF
+
+}
+
+option {
+	font-style: italic;	
+}

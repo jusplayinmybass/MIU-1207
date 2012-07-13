@@ -1,0 +1,109 @@
+<!doctype html>
+<!--Mobile Interfaces and Usability 1207 Assignment 2-->
+<!--Author: Myron Carroll-->
+<!--Bass Student Information-->
+
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	
+	<title>Mobile Site Template</title>
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+	
+	<!-- StyleSheets under here -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr.custom.min.js"></script>
+
+</head>
+<body>
+
+	<div data-role="page">
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<h1>Bass Lessons </h1>
+			
+		</div>
+		<div data-role="content" >
+			<p>Bass Lessons</p>
+			<ul data-role="listview" data-filter="true">
+				<li>
+					<a href=#additem.html >
+						<h3>Sign Up!!!</h3>
+						<p>Perfect Your Craft</p>
+					</a>
+				
+				</li>
+			</ul>
+			
+		</div>
+		<div data-role="content">
+			<div data-role="collapsible-set">
+				<div data-role="collapsible" data-collapsed="true" data-theme="a">
+					<h3>First Name</h3>
+				</div>
+				<div data-role="collapsible" data-collapsed="true" data-theme="b">
+					<h3>Last Name</h3>
+				</div>
+				<div data-role="collapsible" data-collapsed="true" data-theme="c">
+					<h3>Email</h3>
+				</div>
+				<div data-role="collapsible" data-collapsed="true" data-theme="c">
+					<h3>Playing Level</h3>
+				</div>
+				<div data-role="collapsible" data-collapsed="true" data-theme="c">
+					<h3>Age</h3>
+				</div>
+				<div data-role="collapsible" data-collapsed="true" data-theme="c">
+					<h3>Reading Ability</h3>
+				</div>
+			</div>
+				<ul data-role="listview">
+					<li><h3>Ear Test</h3>
+						<p>Can He hear what is played?</p>
+					</li>
+					<li>Reading Test</li>
+					<li>Technique Test</li>
+				</ul>
+		</div>
+		<div data-role="footer" data-position="fixed" data-id="home">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#lessons" data-icon="star">Lessons</a></li>
+					<li><a href="#schedule">Schedule</a></li>
+					<li><a href="#search" data-icon="search">Search</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div data-role="page" id="jb" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>James</h1>
+		</div>
+		
+		<div data-role="footer" data-position="fixed" data-id="home">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#lessons" data-icon="star" class="ui-btn-active">Lessons</a></li>
+					<li><a href="#schedule">Schedule</a></li>
+					<li><a href="#search" data-icon="search">Search</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- JavaScript under here -->
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
